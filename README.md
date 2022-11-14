@@ -10,7 +10,7 @@ And was created as one of the graduation requirements of MSIB batch 3
 
 ## Contributors
 
-- [Andi Paris Bachtiar](https://github.com)
+- [Andi Paris Bachtiar](https://github.com/andiparis)
 - [Azmiy Thufail Abbad Abu Jabir](https://github.com/ansthsys)
 - [Dicky Firmansyah Ekadiputra](https://github.com/DickyFirmansyahE)
 - [Naufal Anas](https://github.com)
