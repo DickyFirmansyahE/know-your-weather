@@ -1,0 +1,178 @@
+
+
+/* 
+#root {
+  background-image: url('./background1.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#root {
+  position:relative;
+}
+
+.App {
+  text-align: center;
+}
+
+main {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px;
+  color: white;
+}
+
+.top-main {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  align-items: center;
+}
+
+.search-button:hover {
+  background-color: rgba(253, 253, 253, 0.438);
+}
+
+.units-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time-location {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  color: white;
+}
+
+.time {
+  font-size: 20px;
+}
+
+.location {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.temp-detail {
+  display: grid;
+  grid-row-gap: 16px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: white;
+  place-items: center;
+}
+
+
+
+.detail-icon {
+  font-size: 18px;
+}
+
+.temp-units {
+  font-size: 50px;
+}
+
+.real-feel {
+  font-size: 18px;
+}
+
+.real-feel .items {
+  margin: 4px 0;
+}
+
+.real-feel .items span {
+  font-weight: bold;
+}
+
+.bottom-detail {
+  display: grid;
+  grid-row-gap: 16px;
+  gap: 25px;
+  padding: 0 50px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.little-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hourly {
+  align-items: center;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.hourly p {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.forecast-hour {
+  display: grid;
+  grid-row-gap: 16px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.App-link {
+  color: #00000046;
+}
+
+.top-button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.top-button:hover {
+  background-color: #ffffffbe;
+  color: black;
+  transition: 100ms;
+  box-shadow: 1px 2px #f7f7f763
+}
+
+
