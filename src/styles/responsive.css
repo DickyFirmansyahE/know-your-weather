@@ -1,0 +1,58 @@
+
+
+@media screen and (max-width: 500px) {
+    .temp-units {
+        margin-bottom: 15px;
+    }
+  }
+
+@media screen and (min-width: 250px) { 
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .temp-detail {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 460px) { 
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+  .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 425px) { 
+  .temp-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }  
+  .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
