@@ -37,8 +37,8 @@ function SearchLocation({ setQuery, units, setUnits }) {
 
   return (
     <div className="top-main">
-      <Paper
-        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 500, backgroundColor: "#ffffffbe", borderRadius: "20px", marginRight: "20px", boxShadow: "1px 2px #00000063" }}
+      <Paper className="search-bar"
+        sx={{ p: "2px 4px", display: "flex", justifyContent: "center", alignItems: "center", width: 500, backgroundColor: "#ffffffbe", borderRadius: "20px", boxShadow: "1px 2px #00000063" }}
       >
         <InputBase
           sx={{ ml: 1, flex: 1, fontWeight: "500",
@@ -68,8 +68,8 @@ function SearchLocation({ setQuery, units, setUnits }) {
         </Paper>
       </Paper>
 
-      <Paper
-        sx={{ p: "2px 4px", display: "flex", alignItems: "center", backgroundColor: "#E14D2A", borderRadius: "20px", boxShadow: "1px 2px #00000063" }}>
+      <Paper className="units-button"
+        sx={{ p: "2px 4px", display: "flex", justifyContent: "center",alignItems: "center", backgroundColor: "#E14D2A", borderRadius: "20px", boxShadow: "1px 2px #00000063" }}>
         <IconButton
           type="button"
           sx={{ p: "10px 14px", "&:hover": { backgroundColor: "#393e4665"}, color: "#ffffff" }}

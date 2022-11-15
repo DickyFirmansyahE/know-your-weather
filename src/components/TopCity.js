@@ -7,7 +7,8 @@ function TopCities({ setQuery }) {
 
   return (
     <Stack direction="row"
-      sx={{ justifyContent: "center"}}>
+      className="top-cities"
+      sx={{ justifyContent: "center" }}>
       {cities.map((city) => (
         <a
           className="top-button"
