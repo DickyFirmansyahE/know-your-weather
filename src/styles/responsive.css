@@ -1,10 +1,31 @@
+@media screen and (max-width: 400px) { 
+  .top-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .search-bar{
+    max-width: 100%;
+    margin-right: 0px;
+  }
 
+  .units-button {
+    width: fit-content;
+    margin-top: 20px;
+  }
+}
 
 @media screen and (max-width: 500px) {
     .temp-units {
         margin-bottom: 15px;
     }
   }
+
+@media screen and (max-width: 530px) { 
+  .top-cities a {
+    display: none;
+  }
+}
 
 @media screen and (min-width: 250px) { 
   .forecast-hour {
@@ -34,6 +55,7 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 
 @media screen and (min-width: 620px) {
   .forecast-hour {
