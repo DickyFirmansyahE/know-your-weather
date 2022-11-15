@@ -36,8 +36,7 @@ function HomePageWrapper() {
     }, [query, units]);
   
     return (
-      <div>
-        <main>
+      <div className="main">
           <TopCities setQuery={setQuery} />
           <SearchLocation setQuery={setQuery} units={units} setUnits={setUnits} />
         {weather && (
@@ -50,7 +49,6 @@ function HomePageWrapper() {
             <Daily title="daily forecast" items={weather.daily} />
           </div>
         )}
-  </main>
         <ToastContainer autoClose={2000} theme="colored" newestOnTop={true} />
       </div>
     );
