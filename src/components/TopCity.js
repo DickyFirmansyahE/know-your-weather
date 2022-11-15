@@ -3,10 +3,10 @@ import React from "react";
 import cities from "../services/local-data";
 import Stack from '@mui/material/Stack';
 
-function TopButtons({ setQuery }) {
+function TopCities({ setQuery }) {
 
   return (
-    <Stack direction="row" spacing={2}
+    <Stack direction="row"
       sx={{ justifyContent: "center"}}>
       {cities.map((city) => (
         <a
@@ -18,4 +18,4 @@ function TopButtons({ setQuery }) {
   );
 }
 
-export default TopButtons;
+export default TopCities;

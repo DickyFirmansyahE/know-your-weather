@@ -4,11 +4,10 @@ import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { FaSearchLocation } from "react-icons/fa";
-import { RiCelsiusFill,RiFahrenheitFill } from "react-icons/ri";
 import { TbLocation } from "react-icons/tb";
 import { toast } from "react-toastify";
 
-function Inputs({ setQuery, units, setUnits }) {
+function SearchLocation({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
 
   const handleUnitsChange = (e) => {
@@ -37,9 +36,9 @@ function Inputs({ setQuery, units, setUnits }) {
   };
 
   return (
-    <div className="flex flex-row justify-center my-6 top-main">
+    <div className="top-main">
       <Paper
-        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400, backgroundColor: "#ffffffbe", borderRadius: "20px", marginRight: "20px", boxShadow: "1px 2px #00000063" }}
+        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 500, backgroundColor: "#ffffffbe", borderRadius: "20px", marginRight: "20px", boxShadow: "1px 2px #00000063" }}
       >
         <InputBase
           sx={{ ml: 1, flex: 1, fontWeight: "500",
@@ -54,7 +53,6 @@ function Inputs({ setQuery, units, setUnits }) {
           inputProps={{ "aria-label": "search google maps" }}
         />
         <Paper
-        component="form"
         sx={{ p: "2px 4px", display: "flex", alignItems: "center", backgroundColor: "#393E46", borderRadius: "20px" }}>
         <IconButton type="button" sx={{ p: "10px", "&:hover": { backgroundColor: "#f7f7f763"}, color: "#ffffff" }} aria-label="search" onClick={handleSearchClick}>
           <FaSearchLocation size={20} />
@@ -71,31 +69,28 @@ function Inputs({ setQuery, units, setUnits }) {
       </Paper>
 
       <Paper
-        component="form"
         sx={{ p: "2px 4px", display: "flex", alignItems: "center", backgroundColor: "#E14D2A", borderRadius: "20px", boxShadow: "1px 2px #00000063" }}>
         <IconButton
           type="button"
-          sx={{ p: "10px", "&:hover": { backgroundColor: "#393e4665"}, color: "#ffffff" }}
+          sx={{ p: "10px 14px", "&:hover": { backgroundColor: "#393e4665"}, color: "#ffffff" }}
           name="metric"
+          title="Metric"
           onClick={handleUnitsChange}>
-        <RiCelsiusFill
-          size={20}
-        />
+        M
         </IconButton>
         <Divider 
         sx={{ height: 28, m: 0.5 }} 
         orientation="vertical" />
         <IconButton 
-          sx={{ p: "10px", "&:hover": { backgroundColor: "#393e4665"}, color: "#ffffff" }} 
+          sx={{ p: "10px 21px", "&:hover": { backgroundColor: "#393e4665"}, color: "#ffffff" }} 
           name="imperial"
+          title="Imperial"
           onClick={handleUnitsChange}>
-        <RiFahrenheitFill
-          size={20}
-        />
+        I
         </IconButton>
         </Paper>
     </div>
   );
 }
 
-export default Inputs;
+export default SearchLocation;

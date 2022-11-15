@@ -91,7 +91,7 @@ const getFormattedWeatherData = async (searchParams) => {
     lon,
     exclude: "current,minutely,alerts",
     units: searchParams.units,
-    lang: "Id",
+    lang: "En",
   }).then(formatForecastWeather);
 
   return { ...formattedCurrentWeather, ...formattedForecastWeather };

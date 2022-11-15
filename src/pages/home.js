@@ -1,11 +1,11 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import TopButtons from "../components/TopButtons";
-import Inputs from "../components/Inputs";
-import TimeAndLocation from "../components/TimeAndLocation";
-import TemperatureAndDetails from "../components/TemperatureAndDetails";
-import ForecastDaily from "../components/ForecastDaily";
-import ForecastHour from "../components/ForecastHour";
+import TopCities from "../components/TopCity";
+import SearchLocation from "../components/SearchLocation";
+import LocationTime from "../components/LocaTIme";
+import TempDetails from "../components/TempDetails";
+import Daily from "../components/DailyForecast";
+import Hourly from "../components/HourlyForecast";
 import getFormattedWeatherData from "../services/weatherService";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -38,16 +38,16 @@ function HomePageWrapper() {
     return (
       <div>
         <main>
-        <TopButtons setQuery={setQuery} />
-          <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+          <TopCities setQuery={setQuery} />
+          <SearchLocation setQuery={setQuery} units={units} setUnits={setUnits} />
         {weather && (
           <div className="main-content">
             <Card sx={{ backgroundColor: '#00000046', borderRadius: "25px", padding: "20px 10px", marginBottom: "20px" }}>
-            <TimeAndLocation weather={weather} />
-            <TemperatureAndDetails weather={weather} units={units} setUnits={setUnits} />
+            <LocationTime weather={weather} />
+            <TempDetails weather={weather} units={units} setUnits={setUnits} />
             </Card>
-            <ForecastHour title="hourly forecast" items={weather.hourly} />
-            <ForecastDaily title="daily forecast" items={weather.daily} />
+            <Hourly title="hourly forecast" items={weather.hourly} />
+            <Daily title="daily forecast" items={weather.daily} />
           </div>
         )}
   </main>

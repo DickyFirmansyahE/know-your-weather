@@ -47,6 +47,7 @@ main {
 .top-main {
   display: flex;
   flex-direction: row;
+  text-align: center;
   justify-content:center;
   margin: 20px 0;
 }
@@ -106,15 +107,24 @@ main {
   font-size: 50px;
 }
 
+.right-detail {
+  display: flex;
+  flex-direction: column;
+}
+
 .real-feel {
+  display: flex;
   font-size: 18px;
+  align-items: center;
 }
 
 .real-feel .items {
+  align-items: center;
   margin: 4px 0;
 }
 
 .real-feel .items span {
+  align-items: center;
   font-weight: bold;
 }
 
@@ -152,7 +162,6 @@ main {
   grid-row-gap: 16px;
   color: white;
   justify-content: center;
-  align-items: center;
   font-size: 18px;
 }
 
@@ -162,7 +171,8 @@ main {
 
 .top-button {
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 5px 15px;
+  margin: 0 8px;
   border-radius: 20px;
   font-size: 20px;
   font-weight: 500;
