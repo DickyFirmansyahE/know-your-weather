@@ -185,3 +185,19 @@ body {
 .subtitle {
   margin-top: 20px;
 }
+
+.copyright {
+  font-size: 18px;
+  color: white;
+}
+
+.copyright a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}

@@ -25,6 +25,12 @@
   .top-cities a {
     display: none;
   }
+  .someClass {
+    display: flex!important;
+  }
+  footer {
+    margin-bottom: 50px;
+  }
 }
 
 @media screen and (min-width: 250px) { 
@@ -55,7 +61,6 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 
 @media screen and (min-width: 620px) {
   .forecast-hour {
