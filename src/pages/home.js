@@ -6,7 +6,7 @@ import LocationTime from "../components/LocaTIme";
 import TempDetails from "../components/TempDetails";
 import Daily from "../components/DailyForecast";
 import Hourly from "../components/HourlyForecast";
-import getFormattedWeatherData from "../services/weatherService";
+import getWeatherData from "../services/callWeatherAPI";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import Card from '@mui/material/Card';
@@ -23,7 +23,7 @@ function HomePageWrapper() {
   
         toast.info("Fetching weather for " + message);
   
-        await getFormattedWeatherData({ ...query, units }).then((data) => {
+        await getWeatherData({ ...query, units }).then((data) => {
           toast.success(
             `Successfully fetched weather for ${data.name}, ${data.country}.`
           );
