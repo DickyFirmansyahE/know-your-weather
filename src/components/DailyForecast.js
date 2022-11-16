@@ -1,5 +1,5 @@
 import React from "react";
-import { iconUrlFromCode } from "../services/weatherService";
+import { weatherIconUrl } from "../services/callWeatherAPI";
 import Card from '@mui/material/Card';
 
 function Daily({ title, items }) {
@@ -17,11 +17,11 @@ function Daily({ title, items }) {
           >
             <p>{item.title}</p>
             <img
-              src={iconUrlFromCode(item.icon)}
+              src={weatherIconUrl(item.icon)}
               alt=""
             />
             <p>{item.description}</p>
-            <p>{`${item.temp.toFixed()}°`}/{`${item.tempmax?.toFixed()}°`}</p>
+            <p>{`${item.tempmin.toFixed()}°`}/{`${item.tempmax?.toFixed()}°`}</p>
           </div>
         ))}
       </div>

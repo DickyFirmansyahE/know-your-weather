@@ -6,7 +6,7 @@ import {
   UilSun,
   UilSunset,
 } from "@iconscout/react-unicons";
-import { formatToLocalTime, iconUrlFromCode } from "../services/weatherService";
+import { formatToLocalTime, weatherIconUrl } from "../services/callWeatherAPI";
 
 export default function TempDetails({
   weather: {
@@ -37,7 +37,7 @@ export default function TempDetails({
       <div className="temp-detail">
         <div className="detail-icon">
           <p>{details}</p>
-          <img src={iconUrlFromCode(icon)} alt=""/>
+          <img src={weatherIconUrl(icon)} alt=""/>
         </div>
 
         <div className="temp-units">
