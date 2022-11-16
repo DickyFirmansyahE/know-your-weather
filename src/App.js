@@ -2,6 +2,10 @@
 import "../src/styles/App.css";
 import "../src/styles/responsive.css";
 import HomePageWrapper from "./pages/home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import BottomNavBar from "./components/BottomNavigation";
+import FooterApp from "./components/FooterApp";
 
 function App() {
 
@@ -33,6 +37,8 @@ function App() {
         <main>
           <HomePageWrapper />
         </main>
+        <FooterApp />
+        <BottomNavBar />
     </div>
   );
 }
