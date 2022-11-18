@@ -5,7 +5,6 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { FaSearchLocation } from "react-icons/fa";
 import { TbLocation } from "react-icons/tb";
-import { toast } from "react-toastify";
 
 function SearchLocation({ setQuery, units, setUnits }) {
   const [city, setCity] = useState("");
@@ -21,9 +20,7 @@ function SearchLocation({ setQuery, units, setUnits }) {
 
   const handleLocationClick = () => {
     if (navigator.geolocation) {
-      toast.info("Fetching users location.");
       navigator.geolocation.getCurrentPosition((position) => {
-        toast.success("Location fetched!");
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 

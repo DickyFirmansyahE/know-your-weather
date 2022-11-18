@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { AiFillHome } from "react-icons/ai";
@@ -19,22 +20,34 @@ export default function BottomNavBar() {
         value={value} 
         onChange={handleLableChange}>
         <BottomNavigationAction
-          sx={{ color: "white", "&:hover": { color: "#E14D2A !important" } }}
+          component={Link}
+          to="/"
+          sx={{ color: "white", "&:hover": { color: "#E14D2A" }, "&.Mui-selected": {
+            color: "#E14D2A"
+          } }}
           label="Home"
           value="Home"
-          icon={<AiFillHome size={20} />}
+          icon={<AiFillHome size={25} />}
         />
         <BottomNavigationAction
-          sx={{ color: "white", "&:hover": { color: "#E14D2A !important" } }}
+          component={Link}
+          to="/login"
+          sx={{ color: "white", "&:hover": { color: "#E14D2A" }, "&.Mui-selected": {
+            color: "#E14D2A"
+          } }}
           label="Favorites"
           value="Favorites"
-          icon={<MdFavorite size={20} />}
+          icon={<MdFavorite size={25} />}
         />
         <BottomNavigationAction
-          sx={{ color: "white", "&:hover": { color: "#E14D2A !important" } }}
+          component={Link}
+          to="/register"
+          sx={{ color: "white", "&:hover": { color: "#E14D2A" }, "&.Mui-selected": {
+            color: "#E14D2A"
+          } }}
           label="About Us"
           value="About Us"
-          icon={<BsFillPersonLinesFill size={20} />}
+          icon={<BsFillPersonLinesFill size={25} />}
         />
       </BottomNavigation>
     );

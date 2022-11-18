@@ -72,7 +72,7 @@ const forecastFormat = (data) => {
         }
     });
 
-    daily = daily.slice(1, 6).map((fdaily) => {
+    daily = daily.slice(1, 8).map((fdaily) => {
         return {
             title: formatToLocalTime(fdaily.dt, timezone, 'ccc'),
             tempmin: fdaily.temp.min,

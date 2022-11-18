@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import "../src/styles/App.css";
 import "../src/styles/responsive.css";
-import HomePageWrapper from "./pages/home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Router from "./routes/routes-app";
 import BottomNavBar from "./components/BottomNavigation";
 import FooterApp from "./components/FooterApp";
 
@@ -35,7 +33,7 @@ function App() {
         //dan ada button logout
         </header>
         <main>
-          <HomePageWrapper />
+          <Router />
         </main>
         <FooterApp />
         <BottomNavBar />

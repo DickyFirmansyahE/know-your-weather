@@ -7,6 +7,7 @@ import {
   UilSunset,
 } from "@iconscout/react-unicons";
 import { formatToLocalTime, weatherIconUrl } from "../services/callWeatherAPI";
+import Paper from '@mui/material/Card';
 
 export default function TempDetails({
   weather: {
@@ -71,6 +72,7 @@ export default function TempDetails({
         </div>
       </div>
 
+      <Paper className="bottom-detail-drawer" style={{ backgroundColor: '#f0f8ff00', boxShadow: "0px 0px #f0f8ff00" }}>
       <div className="bottom-detail">
         <div className="little-detail">
           <UilSun />
@@ -107,6 +109,7 @@ export default function TempDetails({
           </p>
         </div>
       </div>
+      </Paper>
     </div>
   );
 }

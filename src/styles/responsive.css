@@ -15,6 +15,39 @@
   }
 }
 
+@media screen and (max-width: 460px) { 
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+  .forecast-daily {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    justify-content: space-between;
+    white-space: nowrap;
+  }
+  .hour-drawer {
+    max-height: 200px !important;
+    overflow: auto !important;
+  }
+  .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    padding: 12px 0;
+    white-space: nowrap;
+  }
+  .bottom-detail-drawer {
+    margin: 5px;
+    max-height: 200px !important;
+    overflow: auto !important;
+  }
+}
+
 @media screen and (max-width: 500px) {
     .temp-units {
         margin-bottom: 15px;
@@ -25,6 +58,9 @@
   .top-cities a {
     display: none;
   }
+  .card-daily {
+    margin-bottom: 20px;
+  }
   .someClass {
     display: flex!important;
   }
@@ -34,24 +70,13 @@
 }
 
 @media screen and (min-width: 250px) { 
-  .forecast-hour {
+  /* .forecast-hour {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
+  } */
   .temp-detail {
     display: flex;
     flex-wrap: wrap;
-  }
-}
-
-@media screen and (min-width: 460px) { 
-  .forecast-hour {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  } 
-  .bottom-detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -62,8 +87,40 @@
   }
 }
 
+@media screen and (min-width: 460px) { 
+  .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+  .forecast-daily {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  } 
+  .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 530px) { 
+  .card-daily {
+    margin-bottom: 100px;
+  }
+  footer {
+    position:fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+  }
+}
+
 @media screen and (min-width: 620px) {
   .forecast-hour {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .forecast-daily {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
@@ -78,6 +135,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }  
+  .forecast-daily {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  } 
   .bottom-detail {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
