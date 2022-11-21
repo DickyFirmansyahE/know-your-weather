@@ -6,13 +6,22 @@ import {
   CardActions,
   CardContent,
   Container,
+  InputBase,
+  IconButton,
   Link,
+  Paper,
+  Stack,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
-import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import { LoginRounded, Search, Place } from "@mui/icons-material";
 
 export default function FavoritePage() {
-  const [authed, setAuthed] = useState(false);
+  const [authed, setAuthed] = useState(true);
+  const [search, setSearch] = useState("");
+  const [currentLocation, setCurrentLocation] = useState({});
+  const dummyData = [];
+  const mobile = useMediaQuery("(max-width:400px)");
 
   // unauthed user
   if (!authed) {
@@ -55,7 +64,7 @@ export default function FavoritePage() {
               >
                 <Box component='span'>Login</Box>
                 <Box component='span' sx={{ ml: "10px" }}>
-                  <LoginRoundedIcon />
+                  <LoginRounded />
                 </Box>
               </Link>
             </LinkRouter>
@@ -64,4 +73,101 @@ export default function FavoritePage() {
       </Container>
     );
   }
+
+  return (
+    <>
+      <Container maxWidth='md' sx={{ minHeight: "100vh", mt: "15vh" }}>
+        <Stack
+          direction='row'
+          spacing={0}
+          justifyContent='center'
+          alignItems='center'
+          sx={{
+            mb: "25px",
+          }}
+        >
+          <Paper
+            component='form'
+            sx={{
+              p: "4px",
+              display: "flex",
+              alignItems: "center",
+              width: 300,
+              backgroundColor: "white",
+              borderRadius: "50px",
+            }}
+          >
+            <InputBase
+              sx={{ ml: 2, flex: 1 }}
+              placeholder={
+                mobile ? "Find location" : "Find your favorite location"
+              }
+              inputProps={{ "aria-label": "search favorite location" }}
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+                console.log(e.target.value);
+              }}
+            />
+          </Paper>
+          <Box component='span' sx={{ m: 0 }}>
+            <IconButton
+              aria-label='search-location'
+              size='large'
+              sx={{ color: "white" }}
+              onClick={(e) => {
+                console.log(search);
+              }}
+            >
+              <Search />
+            </IconButton>
+          </Box>
+          <Box component='span' sx={{ m: 0 }}>
+            <IconButton
+              aria-label='current-location'
+              size='large'
+              sx={{ color: "white" }}
+              onClick={(e) => {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition((position) => {
+                    let lat = position.coords.latitude;
+                    let long = position.coords.longitude;
+
+                    setCurrentLocation({ lat, long });
+                  });
+                }
+
+                console.log(currentLocation);
+              }}
+            >
+              <Place />
+            </IconButton>
+          </Box>
+        </Stack>
+
+        {dummyData.length < 1 ? (
+          <Card
+            sx={{
+              width: "100%",
+              mr: "auto",
+              ml: "auto",
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+            }}
+          >
+            <CardContent>
+              <Typography
+                variant='h6'
+                sx={{ my: 1.5, textAlign: "center", color: "white" }}
+                component='div'
+              >
+                Your favorite location is empty
+              </Typography>
+            </CardContent>
+          </Card>
+        ) : (
+          "Has data"
+        )}
+      </Container>
+    </>
+  );
 }
