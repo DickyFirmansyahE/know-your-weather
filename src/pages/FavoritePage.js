@@ -51,7 +51,7 @@ export default function FavoritePage() {
               variant='body1'
               sx={{ mb: 1.5, textAlign: "left", color: "white" }}
             >
-              For save your favorite place
+              To save your favorite location
             </Typography>
           </CardContent>
           <CardActions>
