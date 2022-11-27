@@ -69,6 +69,13 @@
   }
 }
 
+@media screen and (max-width: 625px) {
+  .AboutUs {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (min-width: 250px) { 
   /* .forecast-hour {
     display: grid;
@@ -128,6 +135,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .AboutUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 770px) {
@@ -140,6 +151,17 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   } 
   .bottom-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+   .AboutUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .AboutUs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
