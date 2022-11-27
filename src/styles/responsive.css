@@ -69,6 +69,13 @@
   }
 }
 
+@media screen and (max-width: 625px) {
+  .AboutUs {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
 @media screen and (min-width: 250px) { 
   /* .forecast-hour {
     display: grid;
