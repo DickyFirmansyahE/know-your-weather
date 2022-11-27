@@ -221,8 +221,8 @@ body {
   color: #CF544A;
 }
 
-.subtitle {
-  margin-top: 20px;
+.paper-container {
+  padding: 80px 80px;
 }
 
 .copyright {
