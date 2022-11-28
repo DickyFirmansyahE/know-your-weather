@@ -1,14 +1,32 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import InputAdornment from '@mui/material/InputAdornment';
 import { MdLockOutline } from 'react-icons/md';
 
 function FormLogin() {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate("/favorite");
+  }, [user, loading]);
+
   return (
     <Box
       sx={{
@@ -23,6 +41,8 @@ function FormLogin() {
       <Typography component="h1" variant="h5" sx={{ fontSize: '1.5rem', fontWeight: '600' }}>Login</Typography>
       <Box component="form" sx={{ mx: 0.5 }}>
         <TextField
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           name="email"
           id="email"
           label="Email or Username"
@@ -39,6 +59,8 @@ function FormLogin() {
           sx={{ input: { color: '#fff' } }}
         />
         <TextField
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           type="password"
           name="password"
           id="password"
@@ -65,7 +87,7 @@ function FormLogin() {
         <Grid container textAlign="center">
           <Grid item xs={12}>
             <Button
-              type="submit"
+              onClick={() => logInWithEmailAndPassword(email, password)}
               variant="contained"
               color="warning"
               sx={{ mt: 3, mb: 2 }}
@@ -75,7 +97,7 @@ function FormLogin() {
           </Grid>
           <Grid item xs={12}>
             <Link 
-              href="#" 
+              to="/register" 
               variant="caption" 
               align="center" 
               sx={{ color: '#fff' }}

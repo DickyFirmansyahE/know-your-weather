@@ -31,7 +31,7 @@ export default function BottomNavBar() {
         />
         <BottomNavigationAction
           component={Link}
-          to="/login"
+          to="/favorite"
           sx={{ color: "white", "&:hover": { color: "#E14D2A" }, "&.Mui-selected": {
             color: "#E14D2A"
           } }}
@@ -41,7 +41,7 @@ export default function BottomNavBar() {
         />
         <BottomNavigationAction
           component={Link}
-          to="/register"
+          to="/aboutus"
           sx={{ color: "white", "&:hover": { color: "#E14D2A" }, "&.Mui-selected": {
             color: "#E14D2A"
           } }}

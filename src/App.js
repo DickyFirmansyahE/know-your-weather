@@ -1,37 +1,24 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
+import React from "react";
 import "../src/styles/App.css";
 import "../src/styles/responsive.css";
 import Router from "./routes/routes-app";
 import BottomNavBar from "./components/BottomNavigation";
 import FooterApp from "./components/FooterApp";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./firebase";
+import AppBarAfter from "./components/appHeader/AppBarAfter";
+import AppBarBefore from "./components/appHeader/AppBarrBefore";
 
 function App() {
 
-  //sebelum login
-  // return (
-  //   <div className="App">
-  //     <header className='contact-app__header'>
-  //        Nav sebelum login. kalo klik halaman favorit masuknya ke login
-  //       </header>
-  //       <main>
-  //         <Routes>
-  //           <Route path='/' element={<Home />} />
-  //           <Route path='/favorite' element={<Favorite />} />
-  //           <Route path='/logout' element={<LoginPage />} />
-  //           <Route path='*' element={<ErrorNotFound />} />
-  //         </Routes>
-  //       </main>
-  //   </div>
-  // );
-
-
-  // sesudah login
+  const [user] = useAuthState(auth);
+  
+  if (!user) {
+    // sebelum login
   return (
     <div className="App">
-      <header className='contact-app__header'>
-        //Nav sesudah login. bisa masuk halaman favorit
-        //dan ada button logout
-        </header>
+        <AppBarBefore />
         <main>
           <Router />
         </main>
@@ -39,6 +26,19 @@ function App() {
         <BottomNavBar />
     </div>
   );
+  }else{
+  // sesudah login
+  return (
+    <div className="App">
+        <AppBarAfter />
+        <main>
+          <Router />
+        </main>
+        <FooterApp />
+        <BottomNavBar />
+    </div>
+  );
+}
 }
 
 export default App;

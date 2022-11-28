@@ -8,7 +8,6 @@ import Daily from "../components/DailyForecast";
 import Hourly from "../components/HourlyForecast";
 import getWeatherData from "../services/callWeatherAPI";
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import Card from '@mui/material/Card';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -19,14 +18,8 @@ function Home() {
   
     useEffect(() => {
       const fetchWeather = async () => {
-        const message = query.q ? query.q : "current location.";
-  
-        toast.info("Fetching weather for " + message);
   
         await getWeatherData({ ...query, units }).then((data) => {
-          toast.success(
-            `Successfully fetched weather for ${data.name}, ${data.country}.`
-          );
   
           setWeather(data);
         });
@@ -49,7 +42,6 @@ function Home() {
             <Daily title="daily forecast" items={weather.daily} />
           </div>
         )}
-        <ToastContainer autoClose={2000} theme="colored" newestOnTop={true} />
       </div>
     );
   }

@@ -1,3 +1,17 @@
+@media screen and (max-width: 290px) { 
+  .headerTitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 363px) { 
+  .appheader {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 @media screen and (max-width: 400px) { 
   .top-main {
     flex-direction: column;
@@ -55,9 +69,6 @@
   }
 
 @media screen and (max-width: 530px) { 
-  .top-cities a {
-    display: none;
-  }
   .card-daily {
     margin-bottom: 20px;
   }
@@ -69,7 +80,26 @@
   }
 }
 
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 625px) { 
+  .top-cities {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: auto !important;
+  }
+  .nav-button a {
+    display: none;
+  }
+  .nav .burger {
+    display: block;
+  }
+  .burger .logo {
+    display: block;
+  }
+  .drawer {
+    display: block;
+  }
   .AboutUs {
     display: grid;
     grid-template-columns: 1fr;
@@ -77,10 +107,6 @@
 }
 
 @media screen and (min-width: 250px) { 
-  /* .forecast-hour {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  } */
   .temp-detail {
     display: flex;
     flex-wrap: wrap;
