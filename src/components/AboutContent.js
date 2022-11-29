@@ -12,7 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import profile from '../services/profile-data';
 
-export default function MediaCard() {
+export default function AboutContent() {
   return (
     <div class="paper-container">
     <Paper 

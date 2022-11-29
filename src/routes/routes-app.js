@@ -5,14 +5,16 @@ import FavoritePage from "../pages/FavoritePage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorNotFound from "../pages/notFound-page";
+import AboutUs from "../pages/AboutUs";
 
 export default function Router() {
   return (
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route exact path='/favorite' element={<FavoritePage />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
+      <Route exact path='/aboutus' element={<AboutUs />} />
+      <Route exact path='/login' element={<Login />} />
+      <Route exact path='/register' element={<Register />} />
       <Route path='*' element={<ErrorNotFound />} />
     </Routes>
   );
