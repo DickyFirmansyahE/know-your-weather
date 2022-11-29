@@ -1,16 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
+import { auth, logInWithEmailAndPassword } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
+import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import InputAdornment from '@mui/material/InputAdornment';
 import { MdLockOutline } from 'react-icons/md';
+import GoogleSignButton from './button/googleSignButton';
 
 function FormLogin() {
 
@@ -45,7 +47,7 @@ function FormLogin() {
           onChange={(e) => setEmail(e.target.value)}
           name="email"
           id="email"
-          label="Email or Username"
+          label="Email"
           autoComplete="email"
           variant="standard"
           margin="normal"
@@ -84,6 +86,18 @@ function FormLogin() {
           sx={{ input: { color: '#fff' } }}
         />
         
+        <Grid container textAlign="right">
+        <Grid item xs={12}>
+            <Link 
+              className="click-here"
+              to="/reset" 
+              variant="caption" 
+              align="center"
+            >
+               {'Forgot Password?'}
+            </Link>
+          </Grid>
+        </Grid>
         <Grid container textAlign="center">
           <Grid item xs={12}>
             <Button
@@ -96,16 +110,29 @@ function FormLogin() {
             </Button>
           </Grid>
           <Grid item xs={12}>
+            <Typography>
+            Don't have an account?
             <Link 
+              className="click-here"
               to="/register" 
               variant="caption" 
-              align="center" 
-              sx={{ color: '#fff' }}
+              align="center"
             >
-              {"Don't have an account? Register here"}
+               {' Register here'}
             </Link>
+            </Typography>
           </Grid>
         </Grid>
+        <Divider 
+          sx={{ "&::before, &::after": {
+            borderColor: "white", 
+            borderWidth: "2px" 
+            }, 
+            fontSize: "15px", 
+            margin: "12px 0" }}>
+              OR
+        </Divider>
+        <GoogleSignButton />
       </Box>
     </Box>
   );

@@ -6,15 +6,16 @@ import { useNavigate } from "react-router-dom";
 import {
   auth,
   registerWithEmailAndPassword,
-  signInWithGoogle,
 } from "../firebase";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Divider from '@mui/material/Divider';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 import { MdLockOutline } from 'react-icons/md';
+import GoogleSignButton from './button/googleSignButton';
 
 function FormRegister() {
 
@@ -120,16 +121,29 @@ function FormRegister() {
             </Button>
           </Grid>
           <Grid item xs={12}>
+          <Typography>
+            Already have an account?
             <Link 
-              to="/login"
+              className="click-here"
+              to="/login" 
               variant="caption" 
-              align="center" 
-              sx={{ color: '#fff' }}
+              align="center"
             >
-              {"Already have an account? Login here"}
+               {' Login here'}
             </Link>
+            </Typography>
           </Grid>
         </Grid>
+        <Divider 
+          sx={{ "&::before, &::after": {
+            borderColor: "white", 
+            borderWidth: "2px" 
+            }, 
+            fontSize: "15px", 
+            margin: "12px 0" }}>
+              OR
+        </Divider>
+        <GoogleSignButton />
       </Box>
     </Box>
   );

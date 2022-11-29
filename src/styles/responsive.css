@@ -78,6 +78,45 @@
   footer {
     margin-bottom: 50px;
   }
+  .login {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    margin-bottom: 222px;
+    padding: 0 10px;
+    color: white;
+  }
+  .register {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    margin-bottom: 174px;
+    padding: 0 10px;
+    color: white;
+  }
+  .reset {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    margin-bottom: 403px;
+    padding: 0 10px;
+    color: white;
+  }
 }
 
 @media screen and (max-width: 625px) { 
