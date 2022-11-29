@@ -139,9 +139,15 @@
   .drawer {
     display: block;
   }
+}
+
+@media screen and (max-width: 743px) { 
   .AboutUs {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  .paper-container {
+    margin-bottom: 30px;
   }
 }
 
@@ -200,6 +206,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+@media screen and (min-width: 743px) {
+  .AboutUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   .AboutUs {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -219,13 +232,16 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+@media screen and (min-width: 1157px) {
   .AboutUs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1417px) {
   .AboutUs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
