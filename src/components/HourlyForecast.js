@@ -3,7 +3,15 @@ import { weatherIconUrl } from "../services/callWeatherAPI";
 import Card from '@mui/material/Card';
 import Paper from '@mui/material/Card';
 
-function Hourly({ title, items }) {
+function Hourly({ title, items, units, setUnits }) {
+
+  const handleUnitsLogoChange = (e) => {
+    const selectedUnit = e.currentTarget.name;
+    if (units !== selectedUnit) setUnits(selectedUnit);
+  };
+
+  const unitLogo = units === "metric" ? "C" : "F";
+
   return (
       <Card sx={{ backgroundColor: '#00000046', borderRadius: "25px", padding: "20px 30px", marginBottom: "20px" }}>
       <div className="hourly">
@@ -23,7 +31,7 @@ function Hourly({ title, items }) {
               alt=""
             />
             <p>{item.description}</p>
-            <p>{`${item.temp.toFixed()}°`}</p>
+            <p onChange={handleUnitsLogoChange}>{`${item.temp.toFixed()}°${unitLogo}`}</p>
           </div>
         ))}
       </div>

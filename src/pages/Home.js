@@ -38,8 +38,8 @@ function Home() {
             <LocationTime weather={weather} />
             <TempDetails weather={weather} units={units} setUnits={setUnits} />
             </Card>
-            <Hourly title="hourly forecast" items={weather.hourly} />
-            <Daily title="daily forecast" items={weather.daily} />
+            <Hourly title="hourly forecast" items={weather.hourly} units={units} setUnits={setUnits} />
+            <Daily title="daily forecast" items={weather.daily} units={units} setUnits={setUnits} />
           </div>
         )}
       </div>

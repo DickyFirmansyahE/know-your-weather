@@ -26,12 +26,14 @@ export default function TempDetails({
   units,
   setUnits,
 }) {
+
   const handleUnitsLogoChange = (e) => {
     const selectedUnit = e.currentTarget.name;
     if (units !== selectedUnit) setUnits(selectedUnit);
   };
 
   const unitLogo = units === "metric" ? "C" : "F";
+  const unitLogo2 = units === "metric" ? "m/s" : "mph";
 
   return (
     <div>
@@ -51,7 +53,7 @@ export default function TempDetails({
             <UilTemperature size={20} />
             <p className="items">
               Real feel:
-              <span>{` ${feels_like.toFixed()}°`}</span>
+              <span>{` ${feels_like.toFixed()}°${unitLogo}`}</span>
             </p>
           </div>
 
@@ -59,14 +61,14 @@ export default function TempDetails({
             <UilTear size={20} />
             <p className="items">
               Humidity:
-              <span>{` ${humidity.toFixed()}%`}</span>
+              <span>{` ${humidity}%`}</span>
             </p>
           </div>
           <div className="real-feel">
             <UilWind size={20} />
             <p className="items">
               Wind:
-              <span>{` ${speed.toFixed()} km/h`}</span>
+              <span>{` ${speed.toFixed()} ${unitLogo2}`}</span>
             </p>
           </div>
         </div>
@@ -98,14 +100,14 @@ export default function TempDetails({
           <UilSun />
           <p>
             High:{" "}
-            <span>{`${temp_max.toFixed()}°`}</span>
+            <span>{`${temp_max.toFixed()}°${unitLogo}`}</span>
           </p>
         </div>
         <div className="little-detail">
           <UilSun />
           <p className="font-light">
             Low:{" "}
-            <span>{`${temp_min.toFixed()}°`}</span>
+            <span>{`${temp_min.toFixed()}°${unitLogo}`}</span>
           </p>
         </div>
       </div>
