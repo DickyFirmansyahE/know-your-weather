@@ -6,6 +6,7 @@ import {
   CardActions,
   CardContent,
   Container,
+  Grid,
   InputBase,
   IconButton,
   Link,
@@ -14,13 +15,37 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { LoginRounded, Search, Place } from "@mui/icons-material";
+import { LoginRounded, Search, Place, SyncRounded, DeleteRounded } from "@mui/icons-material";
 
 export default function FavoritePage() {
   const [authed, setAuthed] = useState(true);
   const [search, setSearch] = useState("");
   const [currentLocation, setCurrentLocation] = useState({});
-  const dummyData = [];
+  const dummyData = [{
+    id: 1,
+    city: "Cimahi", 
+    region: "ID",
+    temp: 32,
+    status: "Rain"
+  },{
+    id: 2,
+    city: "Bandung", 
+    region: "ID", 
+    temp: 36, 
+    status: "Cloud"
+  },{
+    id: 3,
+    city: "Garut", 
+    region: "ID", 
+    temp: 33, 
+    status: "Rain"
+  },{
+    id: 4,
+    city: "Jakarta", 
+    region: "ID", 
+    temp: 40, 
+    status: "Rain"
+  }];
   const mobile = useMediaQuery("(max-width:400px)");
 
   // unauthed user
@@ -165,7 +190,132 @@ export default function FavoritePage() {
             </CardContent>
           </Card>
         ) : (
-          "Has data"
+          <Container>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+              {dummyData.map(value => (
+                <Grid item xs={2} sm={4} md={4} key={value.id}>
+                  <Card
+                    sx={{
+                      backgroundColor: "rgba(0, 0, 0, 0.4)",
+                      display: "flex",
+                      flexDirection: "row", 
+                      justifyContent: "space-between", 
+                      minHeight: {
+                        xs: "125px",
+                        sm: "150px", 
+                        md: "150px"
+                      }
+                    }}
+                  >
+                    <CardContent
+                      sx={{
+                        alignItems: "center", 
+                        display: "flex",
+                        flexDirection: "row",
+                        gap: 2,  
+                        justifyContent: "space-evenly", 
+                        paddingRight: "8px",
+                        width: "100%"
+                      }}
+                    >
+                      <Typography
+                        variant='h6'
+                        sx={{ mb: 1.5, textAlign: "center", color: "white" }}
+                        component='div'
+                      >
+                        {value.city}, {value.region}
+                      </Typography>
+                      <Box component='div' sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <Typography
+                          variant='h6'
+                          sx={{
+                            textAlign: "center", 
+                            color: "white", 
+                            fontSize: "1.4rem", 
+                            fontWeight: "bold" 
+                          }}
+                          component='div'
+                        >
+                          {value.temp}°C
+                        </Typography>
+                        <Typography
+                          variant='h6'
+                          sx={{ 
+                            textAlign: "center", 
+                            color: "white", 
+                            fontSize: "1rem", 
+                            fontWeight: "normal" 
+                          }}
+                          component='div'
+                        >
+                          {value.status}
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                    <CardActions
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-evenly",
+                        alignItems: "center",
+                        p: 0
+                      }}
+                    >
+                      <Box component='div' sx={{ 
+                        alignItems: "center",
+                        backgroundColor: "rgba(0, 200, 247, 1)",
+                        display: "flex",
+                        flexBasis: "50%",
+                        justifyContent: "center", 
+                        m: 0,
+                        ml: "8px", 
+                       }}
+                      >
+                        <IconButton
+                          aria-label='synchronize-location'
+                          size='small'
+                          sx={{ color: "white" }}
+                          onClick={(e) => {
+                            console.log("synchronize");
+                            console.log(value);
+                          }}
+                        >
+                          <SyncRounded />
+                        </IconButton>
+                      </Box>
+                      <Box component='div' sx={{
+                        alignItems: "center", 
+                        display: "flex", 
+                        backgroundColor: "rgba(255, 150, 0, 1)",
+                        flexBasis: "50%",
+                        justifyContent: "center", 
+                        m: 0,
+                       }}
+                      >
+                        <IconButton
+                          aria-label='delete-location'
+                          size='small'
+                          sx={{ color: "white" }}
+                          onClick={(e) => {
+                            console.log("delete");
+                            console.log(value);
+                          }}
+                        >
+                          <DeleteRounded />
+                        </IconButton>
+                      </Box>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         )}
       </Container>
     </>
