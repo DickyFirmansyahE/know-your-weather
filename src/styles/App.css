@@ -265,6 +265,39 @@ body {
   transition: 100ms;
 }
 
+.fav-content {
+  margin-top: 70px;
+}
+
+.add-fav {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 60px
+}
+
+.card-fav {
+  flex-direction: row;
+}
+
+.button-cardfav {
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.update-button {
+  margin-left: 8px;
+  flex-basis: 50%;
+}
+
+.delete-button {
+  margin-left: 8px;
+  flex-basis: 50%;
+}
+
 .AboutUs {
   display: flex;
 }
