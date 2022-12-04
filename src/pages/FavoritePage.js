@@ -6,7 +6,7 @@ import store from '../redux/store';
 import { Provider } from 'react-redux';
 import FavoriteRedux from '../components/favorite/FavoriteRedux';
 
-function FavoriteLogin() {
+function FavoritePage() {
 
     const [user, loading ] = useAuthState(auth);
     const navigate = useNavigate();
@@ -27,4 +27,4 @@ function FavoriteLogin() {
   );
 }
 
-export default FavoriteLogin;
+export default FavoritePage;
