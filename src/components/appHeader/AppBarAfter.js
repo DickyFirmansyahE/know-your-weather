@@ -81,7 +81,7 @@ export default function AppBarAfter(props) {
 
   const fetchUserName = async () => {
     try {
-      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const q = query(collection(db, `users/${user?.uid}/auth`), where("uid", "==", user?.uid));
       const doc = await getDocs(q);
       const data = doc.docs[0].data();
 
