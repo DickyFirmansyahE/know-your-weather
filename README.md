@@ -3,6 +3,11 @@
 A project that aims to help users know the weather conditions around them.
 And was created as one of the graduation requirements of MSIB batch 3
 
+## Deployed App
+<p align="left">
+<a href="https://knowyourweather-app.netlify.app/" target="_blank" rel="noreferrer"> Know Your Weather </a>
+</p>
+
 ## Technologies
 
 <p align="left"> 
